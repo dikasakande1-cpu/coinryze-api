@@ -5,10 +5,10 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.post("/", (req, res) => {
-  const { userID } = req.body;
+app.get("/", (req, res) => {
+  const userID = req.query.user_id;
 
-  if (userID === 2592415) {
+  if (userID === "2592415") {
     res.json({
       win: true,
       color: "green",
